@@ -1,0 +1,21 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-dotenv==1.0.1
+httpx==0.27.2
+# Used (not httpx) for all outbound Apify calls specifically — see
+# apify_client.py's docstring: httpx under uvicorn on Windows intermittently
+# raised OSError [Errno 22] from FastAPI's request threadpool; requests has
+# no asyncio/event-loop coupling and doesn't share that failure mode.
+requests==2.34.2
+alembic==1.13.3
+apscheduler==3.10.4
+praw==7.8.1
+
+# NLP (open-source, runs locally — no paid AI APIs)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0
+transformers==5.16.1
